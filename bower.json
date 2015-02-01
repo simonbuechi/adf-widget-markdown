@@ -1,0 +1,18 @@
+{
+  "name": "adf-widget-markdown",
+  "version": "0.1.0-SNAPSHOT",
+  "main": "dist/adf-widget-markdown.js",
+  "ignore": [
+    "bower.json",
+    ".bowerrc",
+    ".jshintrc",
+    ".gitignore",
+    "gulpfile.js",
+    "node_modules",
+    "package.json",
+    "src"
+  ],
+  "dependencies": {
+    "angular-markdown-directive": "~0.1.0"
+  }
+}
