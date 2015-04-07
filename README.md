@@ -1,6 +1,6 @@
 # adf-widget-markdown
 
-clock widget for the [angular-dashboard-framework](https://github.com/sdorra/angular-dashboard-framework).
+Markdown widget for the [angular-dashboard-framework](https://github.com/sdorra/angular-dashboard-framework).
 
 ## Build
 
