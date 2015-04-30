@@ -22,13 +22,13 @@
   ],
   "description": "Markdown widget for the angular-dashboard-framework",
   "dependencies": {
-    "angular-dashboard-framework": "0.7.0",
+    "angular-dashboard-framework": "0.8.0",
     "angular-markdown-directive": "^0.1.0"
   },
   "devDependencies": {
     "angular-local-storage": "0.1.5"
   },
   "resolutions": {
-    "angular": "1.2.27"
+    "angular": "1.2.28"
   }
 }
