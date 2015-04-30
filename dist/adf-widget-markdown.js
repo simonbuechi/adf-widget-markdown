@@ -1,3 +1,4 @@
+(function(window, undefined) {'use strict';
 /*
  * The MIT License
  *
@@ -22,10 +23,10 @@
  * SOFTWARE.
  */
 
-'use strict';
+
 
 angular.module('adf.widget.markdown', ['adf.provider', 'btford.markdown'])
-  .config(function(dashboardProvider){
+  .config(["dashboardProvider", function(dashboardProvider){
     dashboardProvider
       .widget('markdown', {
         title: 'Markdown',
@@ -37,12 +38,12 @@ angular.module('adf.widget.markdown', ['adf.provider', 'btford.markdown'])
           reload: false
         }
       });
-  }).controller('markdownCtrl', function($scope, config){
+  }]).controller('markdownCtrl', ["$scope", "config", function($scope, config){
     if (!config.content){
       config.content = '';
     }
     $scope.config = config;
-  });
+  }]);
 
 angular.module("adf.widget.markdown").run(["$templateCache", function($templateCache) {$templateCache.put("{widgetsPath}/markdown/src/edit.html","<form role=form><div class=form-group><label for=content>Markdown content</label> <textarea id=content class=form-control rows=5 ng-model=config.content></textarea></div></form>");
-$templateCache.put("{widgetsPath}/markdown/src/view.html","<div class=markdown btf-markdown=config.content></div>");}]);
+$templateCache.put("{widgetsPath}/markdown/src/view.html","<div class=markdown btf-markdown=config.content></div>");}]);})(window);
