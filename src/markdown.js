@@ -1,7 +1,7 @@
 /*
  * The MIT License
  *
- * Copyright (c) 2015, Sebastian Sdorra
+ * Copyright (c) 2015, Simon Buechi
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -26,20 +26,39 @@
 
 angular.module('adf.widget.markdown', ['adf.provider', 'btford.markdown'])
   .config(function(dashboardProvider){
+
     dashboardProvider
-      .widget('markdown', {
+      .widget('markdown', angular.extend({
         title: 'Markdown',
-        description: 'Markdown widget',
+        description: 'Display content in markdown notation',
         controller: 'markdownCtrl',
-        templateUrl: '{widgetsPath}/markdown/src/view.html',
+        templateUrl: '{widgetsPath}/markdown/view.html',
         edit: {
-          templateUrl: '{widgetsPath}/markdown/src/edit.html',
+          templateUrl: '{widgetsPath}/markdown/edit.html',
           reload: false
         }
-      });
-  }).controller('markdownCtrl', function($scope, config){
+        }))
+      .widget('markdownfile', angular.extend({
+        title: 'Markdown File',
+        description: 'Display content in markdown notation from file',
+        controller: 'markdownfileCtrl',
+        templateUrl: '{widgetsPath}/markdown/view-file.html',
+        edit: {
+          templateUrl: '{widgetsPath}/markdown/edit-file.html'
+        }
+        }));
+  })
+  .controller('markdownCtrl', function($scope, config){
     if (!config.content){
       config.content = '';
     }
     $scope.config = config;
+  })
+  .controller('markdownfileCtrl', function($scope, config){
+    if (!config.url){
+      config.url = '';
+    } 
+    $scope.config = config;
   });
+
+
