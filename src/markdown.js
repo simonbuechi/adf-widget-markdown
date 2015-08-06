@@ -32,9 +32,9 @@ angular.module('adf.widget.markdown', ['adf.provider', 'btford.markdown'])
         title: 'Markdown',
         description: 'Display content in markdown notation',
         controller: 'markdownCtrl',
-        templateUrl: '{widgetsPath}/markdown/view.html',
+        templateUrl: '{widgetsPath}/markdown/src/view.html',
         edit: {
-          templateUrl: '{widgetsPath}/markdown/edit.html',
+          templateUrl: '{widgetsPath}/markdown/src/edit.html',
           reload: false
         }
         }))
@@ -42,9 +42,9 @@ angular.module('adf.widget.markdown', ['adf.provider', 'btford.markdown'])
         title: 'Markdown File',
         description: 'Display content in markdown notation from file',
         controller: 'markdownfileCtrl',
-        templateUrl: '{widgetsPath}/markdown/view-file.html',
+        templateUrl: '{widgetsPath}/markdown/src/view-file.html',
         edit: {
-          templateUrl: '{widgetsPath}/markdown/edit-file.html'
+          templateUrl: '{widgetsPath}/markdown/src/edit-file.html'
         }
         }));
   })
